@@ -1,19 +1,21 @@
-# Query workflow
+# Query
 
-**Goal:** Answer questions using `wiki/` + `raw/`, and persist durable answers when reuse is likely.
+Answer from **`wiki/`** + **`raw/`** with provenance; persist reusable answers in `wiki/` (often `analyses/` or `concepts/`).
 
 ## Steps
 
-1. **Search** the wiki catalog (`wiki/index.md`) and relevant pages.
-2. **Cite** raw paths for non-obvious claims.
-3. **Optional persistence:** create or update an `analyses/` or `concepts/` page; link related entities.
-4. **Append `wiki/log.md`** with a `query` entry pointing to the written page.
-5. **Run** `uv run python scripts/validate_wiki.py`.
+1. Start at **`wiki/index.md`**; read only what the question needs.
+2. Cite wiki + raw for non-obvious claims; mark uncertainty.
+3. If reusable, file into `wiki/`; extend canonical pages before adding siblings.
+4. Update `wiki/index.md` / hubs when navigation changes; append `wiki/log.md` (`query`).
+5. `make validate`.
 
-## Filing answers into the wiki
+## When to persist
 
-Short-lived answers can stay in chat; durable answers belong in the wiki with explicit limits and citations. Use frontmatter `confidence` and `review_status` honestly.
+Reusable answer; standing interpretation changes; new comparison surface; resolves an open question.
 
-## Done definition
+## Done
 
-Answer references wiki/raw; if persisted, page exists and is linked from index or inbound links; log updated; validator clean.
+Citations present; durable page updated when warranted; routing clear; log appended; validation passes.
+
+**Next:** **`wiki/index.md`**.

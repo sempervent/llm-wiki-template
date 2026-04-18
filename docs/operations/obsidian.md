@@ -1,21 +1,38 @@
-# Obsidian settings
+# Obsidian (primary UI)
 
-## Opening the vault
+Obsidian is the default way to read and edit **`wiki/`** + **`raw/`**.
 
-- **Whole repo:** open the repository root to access `wiki/`, `raw/`, and `docs/` in one tree.
-- **Wiki only:** open `wiki/` as the vault if you want a minimal graph.
+## Vault layout
 
-## Recommended settings
+| Mode | Open | Tradeoff |
+|------|------|----------|
+| **Repo root** (recommended) | Entire clone | One vault; `docs/`, `scripts/` visible |
+| **`wiki/` only** | `wiki/` subfolder | Cleaner graph; handbook paths need manual hops |
 
-- **Files & links → Automatically update internal links:** useful when renaming with Obsidian; still run `scripts/validate_wiki.py` after bulk renames.
-- **New link format:** Relative path to file (aligns with MkDocs and GitHub).
+## Settings (suggested)
+
+| Setting | Value |
+|---------|--------|
+| Files & links → New link format | Relative path to file |
+| Files & links → Detect all file extensions | On |
+| Files & links → Use `[[Wikilinks]]` | Optional (keep `.md` portable links too) |
+
+## Links
+
+- **Portable:** e.g. `[Quickstart](../quickstart.md)` from this folder (`.md` relatives, not repo-absolute paths)
+- **Wikilinks:** `[[foo]]` — run `uv run python scripts/wiki_wikilinks.py` occasionally; CI can rank unresolved links
 
 ## Attachments
 
-- Store binaries under `raw/assets/` (or a dedicated `attachments/` path you document once).
-- Reference from markdown with relative links: `../../raw/assets/diagram.png`.
-- Avoid committing huge binaries without Git LFS; keep the template lean.
+Prefer `raw/assets/` (or a documented path). Avoid spaces in filenames.
 
-## Graph view
+## Graph
 
-Cross-link entities, concepts, and analyses liberally. Prefer stable titles in frontmatter so the graph stays readable after refactors.
+Use as a **hint**, not truth. Prefer `wiki/index.md` + hubs for navigation.
+
+## Pitfalls
+
+- Renames: update inbound links or use `aliases` in frontmatter
+- Orphans: fix via links + `wiki/index.md`
+
+**Next:** [`agent-maintenance.md`](agent-maintenance.md), or open **`wiki/index.md`** in Obsidian.

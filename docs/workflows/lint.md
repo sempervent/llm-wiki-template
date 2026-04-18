@@ -1,17 +1,19 @@
-# Lint workflow
+# Lint
 
-**Goal:** Periodic hygiene—links, index coverage, duplicates, orphans—without rewriting history.
+Keep structure valid and navigation healthy—not only “script passes.”
 
 ## Steps
 
-1. Run `uv run python scripts/validate_wiki.py --strict`.
-2. Run `uv run python scripts/rebuild_index.py` and fix any missing index links.
-3. Address stale pages (`review_status: stale`) or mark supersession with `superseded_by`.
-4. Append `wiki/log.md` with a `lint` entry.
-5. Commit small, scoped changes.
+1. `make validate`
+2. `uv run python scripts/rebuild_index.py` — fix index + hub links
+3. Review `review_status: stale`, contradictions, `scripts/wiki_wikilinks.py` as needed
+4. Append `wiki/log.md` (`lint`)
+5. Small commits
 
-## Done definition
+## Done
 
-Validator strict clean; index audit clean; log documents the pass.
+Strict validator clean; index/hubs match pages; stale/orphan issues fixed or deferred in log.
 
-See [`templates/lint-checklist.md`](https://github.com/sempervent/llm-wiki-template/blob/main/templates/lint-checklist.md) (local path: `templates/lint-checklist.md`).
+Checklist: `templates/lint-checklist.md`.
+
+**Next:** **`wiki/index.md`**, then `make check` before merge.

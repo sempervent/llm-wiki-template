@@ -1,25 +1,24 @@
-# Publishing (MkDocs + GitHub Pages)
+# Publishing handbook (optional)
 
-## What gets published
+GitHub Pages mirrors **`docs/`** only. Live work stays in **`wiki/`** + **`raw/`** (Obsidian).
 
-- The **handbook** in `docs/` is the MkDocs site (`mkdocs.yml`).
-- The **wiki** in `wiki/` is optimized for Obsidian and Git; it is not automatically dumped into the MkDocs nav (keeps the handbook focused). You can add selected wiki pages to `mkdocs.yml` if you want them on the site.
+## What publishes
 
-## GitHub Actions
+- `docs/` → MkDocs site
+- `wiki/` is **not** auto-exported into the handbook nav
 
-- **`.github/workflows/ci.yml`** — pull requests and pushes: `uv sync --frozen --all-groups`, wiki + docs validation, taxonomy check, pytest, MkDocs strict build.
-- **`.github/workflows/docs.yml`** — pushes to `main` and manual dispatch: same steps plus upload to GitHub Pages (`actions/deploy-pages`).
-- Uses concurrency to cancel superseded runs.
-
-## Repository settings
-
-Enable **GitHub Pages** with the **GitHub Actions** source. The first successful deploy creates the environment; no legacy `gh-pages` branch is required.
-
-## Local build
+## Local preview
 
 ```bash
-uv sync
-uv run mkdocs build --strict
+make docs-build    # output: site/
+make docs-serve
 ```
 
-Artifacts land in `site/` (gitignored).
+## CI
+
+- `.github/workflows/ci.yml` — PR/push
+- `.github/workflows/docs.yml` — deploy on `main` (or manual)
+
+Enable **Settings → Pages → GitHub Actions**. No `gh-pages` branch required.
+
+**Next:** [`../quickstart.md`](../quickstart.md) or [`validation.md`](validation.md).

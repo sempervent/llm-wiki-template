@@ -1,80 +1,26 @@
 # Quickstart
 
-## Create a repository from the template
+Obsidian-first. **`just`** mirrors **`make`** (same names).
 
-1. Open the template on GitHub and choose **Use this template** → **Create a new repository**.
-2. Name the repository (for example `my-research-wiki`) and clone it locally:
+| Step | Action |
+|------|--------|
+| 1 | **Use this template** on GitHub → new repo |
+| 2 | `git clone` → `cd` repo |
+| 3 | `uv sync --all-groups` |
+| 4 | Obsidian → **Open folder as vault** → repo root (or `wiki/` only — see [Obsidian](operations/obsidian.md)) |
+| 5 | Open **`wiki/index.md`** |
+| 6 | Open **`AGENTS.md`** |
+| 7 | Edit a `wiki/` page or add `raw/inbox/` + `wiki/source-notes/` |
+| 8 | `make validate` |
+| 9 | (optional) `make docs-serve` — handbook preview only |
+| 10 | (optional) GitHub **Settings → Pages → GitHub Actions** → push `main` |
 
-```bash
-git clone https://github.com/YOUR_USER/my-research-wiki.git
-cd my-research-wiki
-```
+**After step 4, next file:** `wiki/index.md`.
 
-3. Install **[uv](https://docs.astral.sh/uv/getting-started/installation/)** (one-time on your machine).
+**After step 6, next file:** any page linked from `wiki/index.md`.
 
-4. Create the virtual environment and install locked dependencies (runtime, docs site, and dev tools):
+## Optional: publish handbook
 
-```bash
-uv sync --all-groups
-```
+[`operations/publishing.md`](operations/publishing.md)
 
-5. Optional: set the MkDocs site title and ensure directories exist:
-
-```bash
-uv run python scripts/bootstrap.py --site-name "My Research Wiki"
-```
-
-## Open the wiki in Obsidian
-
-1. In Obsidian: **Open folder as vault** → select the repository root (or only the `wiki/` folder if you prefer a smaller vault).
-2. Use **Files** navigation; the catalog is `wiki/index.md` in your clone ([view on GitHub](https://github.com/sempervent/llm-wiki-template/blob/main/wiki/index.md)).
-
-Recommended settings are described in [Obsidian notes](operations/obsidian.md).
-
-## Run a local documentation preview
-
-The published handbook lives in `docs/` and builds with MkDocs (Material theme).
-
-```bash
-uv sync --all-groups   # if you have not synced yet
-uv run python scripts/render_taxonomy_doc.py   # refresh generated reference (handbook)
-uv run mkdocs serve
-```
-
-Or: `make docs-serve` or `just docs-serve` from the repository root (`Makefile` / `justfile` next to `docs/`).
-
-Open the URL shown (typically `http://127.0.0.1:8000`).
-
-## Publish to GitHub Pages
-
-1. In the GitHub repository: **Settings → Pages → Build and deployment**.
-2. Set **Source** to **GitHub Actions** (recommended with the included workflow).
-3. Push to `main`; the workflow in `.github/workflows/docs.yml` builds MkDocs and deploys to Pages.
-
-See [Publishing](operations/publishing.md) for permissions, concurrency, and branch rules.
-
-## Validate the wiki locally
-
-```bash
-uv sync --all-groups
-make validate    # wiki + docs link checks; or: uv run python scripts/validate_wiki.py --strict && uv run python scripts/validate_docs_links.py
-uv run python scripts/render_taxonomy_doc.py --check
-uv run pytest
-```
-
-CI runs the same checks on pull requests and `main` (see `.github/workflows/ci.yml`).
-
-## Optional: pre-commit
-
-After `uv sync --all-groups`, you can install [pre-commit](https://pre-commit.com/) hooks for Ruff and basic file hygiene:
-
-```bash
-uv run pre-commit install
-uv run pre-commit run --all-files
-```
-
-CI does not require hooks; it runs the same validators directly.
-
-## Updating dependencies
-
-Edit version pins in `pyproject.toml`, then run `uv lock` and commit the updated `uv.lock`.
+**Next:** [`operations/obsidian.md`](operations/obsidian.md) for vault ergonomics.

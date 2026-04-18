@@ -67,4 +67,25 @@ Append-only chronological record. New entries go at the **bottom**. Heading form
 
 - Tightened `docs/operations/agents-downstream-abstraction.md` “omitted” list to remove sector-specific jargon; kept the same intent in generic language.
 - `AGENTS.md` entity-first rule: “sites” → “locations” for neutral reading.
+---
 
+## [2026-04-18] refactor | Obsidian-first onboarding and operations tightening
+
+- Rewrote onboarding and operator docs (README, docs home, quickstart, architecture, Obsidian, workflows, agent maintenance) to make Obsidian/local-first operation explicit and reduce ceremony.
+- Updated command ergonomics: documented `uv sync --all-groups`; added `make check` / `just check` for a full local run.
+- Improved templates for capture→activation behavior and routing prompts; upgraded examples into a small end-to-end chain (raw -> source-note -> concept -> analysis -> comparison -> index/log specimen).
+---
+
+## [2026-04-18] policy | Correction: clean summary for Obsidian-first refactor
+
+- Correction to prior refactor log entry: shell command substitution inserted validator output into the body. Use this entry as the canonical summary.
+- Rewrote README/docs onboarding for Obsidian-first operation, index-first traversal, and AGENTS-first maintenance.
+- Updated workflows/templates/examples for capture-plus-activation, routing, and practical specimen pages.
+- Added make check and just check for a single full local confidence run.
+
+---
+
+## [2026-04-18] refactor | Handbook scalpel pass
+
+- Trimmed README and handbook onboarding pages; added explicit **Next:** file pointers; standardized on `make` with one `just` note.
+- Shortened workflows (`ingest`, `query`, `lint`); repaired corrupted body text in the prior refactor log entry above.

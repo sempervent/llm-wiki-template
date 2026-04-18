@@ -1,24 +1,27 @@
 # Agent maintenance
 
-Automation (Codex, Claude Code, Cursor agents, etc.) should treat [`AGENTS.md`](https://github.com/sempervent/llm-wiki-template/blob/main/AGENTS.md) as the **highest-priority** contract.
+Agents should traverse **`wiki/index.md`** first, then only pages in scope.
 
-## Priorities
+## Session loop
 
-1. `AGENTS.md` — mission, layers, workflows, log rules
-2. `README.md` — human orientation
-3. Task-specific user instructions
+1. `wiki/index.md` → relevant cluster
+2. Read `raw/` only when provenance matters
+3. Update synthesis + routing (`wiki/index.md`, hubs)
+4. Append `wiki/log.md`
+5. `make check` before PR (or `make validate` for wiki-only edits)
 
-## Session pattern
+## Quality
 
-1. Read `AGENTS.md` and `wiki/index.md`.
-2. Perform ingest/query/lint in small, verifiable steps. Ingest is **capture + activation** (see `AGENTS.md`): file evidence, then route it into the wiki model when material warrants it.
-3. Run `scripts/validate_wiki.py` before commit.
-4. Append `wiki/log.md` for substantive work.
+- **Duplicates:** merge or link; prefer one canonical page
+- **Hubs:** topic pages aggregate siblings; avoid orphan-only navigation
+- **Evidence:** cite `raw/` paths in wiki text or `source_ids`
 
-See [Evolving `AGENTS.md` from forks](agents-downstream-abstraction.md) for maintainer-oriented notes (optional).
+## Logging
 
+Append-only `wiki/log.md` with correct headings (`ingest`, `query`, `lint`, …).
 
-## Pull requests
+## PRs
 
-- Keep diffs scoped; prefer incremental updates over full rewrites.
-- CI must pass: tests, validator, MkDocs strict build.
+Small diffs; cite `wiki/` paths in the PR body.
+
+**Next:** open **`wiki/index.md`** in Obsidian, or **`AGENTS.md`** for full contract.
