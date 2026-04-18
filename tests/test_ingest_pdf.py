@@ -35,7 +35,7 @@ def test_build_processed_markdown_includes_frontmatter() -> None:
         body_md="## Page 1\n\ntext\n",
     )
     assert "---" in md
-    assert 'source_kind: pdf_extract' in md
+    assert "source_kind: pdf_extract" in md
     assert 'source_pdf: "raw/inbox/x.pdf"' in md
     assert "id: raw-2026-my-doc" in md
     assert "# My Doc" in md

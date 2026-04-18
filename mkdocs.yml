@@ -1,6 +1,8 @@
 # MkDocs site: template handbook and operator documentation.
 # Wiki content lives in /wiki (Obsidian); this site documents how to run and maintain it.
 
+strict: true
+
 site_name: LLM Wiki Template
 site_description: Structured, agent-maintained markdown wiki — handbook and operations
 site_author: Template maintainers
@@ -69,6 +71,8 @@ nav:
       - operations/publishing.md
       - operations/agent-maintenance.md
       - operations/obsidian.md
+  - Reference:
+      - reference/page-taxonomy.md
 
 extra:
   social:

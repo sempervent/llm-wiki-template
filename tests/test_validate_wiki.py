@@ -24,15 +24,9 @@ def test_validate_wiki_detects_broken_link(tmp_path: Path) -> None:
     (root / "LICENSE").write_text("BSD\n", encoding="utf-8")
     (root / "mkdocs.yml").write_text("site_name: t\n", encoding="utf-8")
     (root / "raw" / "README.md").write_text("# raw\n", encoding="utf-8")
-    (root / "wiki" / "overview.md").write_text(
-        "---\ntitle: O\npage_type: overview\n---\n# O\n", encoding="utf-8"
-    )
-    (root / "wiki" / "index.md").write_text(
-        "# I\n\n## Overview\n\n- [O](overview.md) — x\n", encoding="utf-8"
-    )
-    (root / "wiki" / "log.md").write_text(
-        "# L\n\n## [2026-01-01] lint | x\n\nok\n", encoding="utf-8"
-    )
+    (root / "wiki" / "overview.md").write_text("---\ntitle: O\npage_type: overview\n---\n# O\n", encoding="utf-8")
+    (root / "wiki" / "index.md").write_text("# I\n\n## Overview\n\n- [O](overview.md) — x\n", encoding="utf-8")
+    (root / "wiki" / "log.md").write_text("# L\n\n## [2026-01-01] lint | x\n\nok\n", encoding="utf-8")
     (root / "wiki" / "entities").mkdir()
     (root / "wiki" / "broken.md").write_text(
         "---\ntitle: B\npage_type: concept\n---\n[bad](entities/file-does-not-exist.md)\n",

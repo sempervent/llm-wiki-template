@@ -23,7 +23,7 @@ from wiki_common import infer_repo_root
 try:
     import fitz  # PyMuPDF
 except ImportError as e:  # pragma: no cover - exercised when dependency missing
-    print("ERROR: PyMuPDF is required. Install with: uv sync", file=sys.stderr)
+    print("ERROR: PyMuPDF is required. Install with: uv sync (or uv sync --all-groups)", file=sys.stderr)
     raise SystemExit(1) from e
 
 
@@ -69,7 +69,7 @@ def build_processed_markdown(
     doc_id = f"raw-{year}-{slug}"
     fm = (
         "---\n"
-        f'id: {doc_id}\n'
+        f"id: {doc_id}\n"
         f'title: "{yaml_title}"\n'
         f"ingested: {ingested}\n"
         "source_kind: pdf_extract\n"
@@ -147,8 +147,7 @@ def main() -> int:
     slug = args.slug or slugify_stem(pdf_path.name)
     if not re.match(r"^[a-z0-9]+(-[a-z0-9]+)*$", slug):
         print(
-            "ERROR: slug must be kebab-case (lowercase letters, digits, hyphens). "
-            f"Got: {slug!r}",
+            f"ERROR: slug must be kebab-case (lowercase letters, digits, hyphens). Got: {slug!r}",
             file=sys.stderr,
         )
         return 1

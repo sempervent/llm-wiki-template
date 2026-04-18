@@ -7,7 +7,7 @@
 
 ## GitHub Actions
 
-- **`.github/workflows/ci.yml`** — pull requests and pushes: `uv sync --frozen`, validate, pytest, MkDocs strict build.
+- **`.github/workflows/ci.yml`** — pull requests and pushes: `uv sync --frozen --all-groups`, wiki + docs validation, taxonomy check, pytest, MkDocs strict build.
 - **`.github/workflows/docs.yml`** — pushes to `main` and manual dispatch: same steps plus upload to GitHub Pages (`actions/deploy-pages`).
 - Uses concurrency to cancel superseded runs.
 

@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import argparse
 import re
-import sys
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -30,6 +29,7 @@ DIRS = [
     "docs/workflows",
     "docs/conventions",
     "docs/operations",
+    "docs/reference",
     "examples/raw",
     "examples/wiki",
     "templates",

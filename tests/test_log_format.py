@@ -1,7 +1,5 @@
 """Log heading format."""
 
-import re
-
 from wiki_common import LOG_HEADING_PATTERN
 
 

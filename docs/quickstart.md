@@ -12,10 +12,10 @@ cd my-research-wiki
 
 3. Install **[uv](https://docs.astral.sh/uv/getting-started/installation/)** (one-time on your machine).
 
-4. Create the virtual environment and install locked dependencies:
+4. Create the virtual environment and install locked dependencies (runtime, docs site, and dev tools):
 
 ```bash
-uv sync
+uv sync --all-groups
 ```
 
 5. Optional: set the MkDocs site title and ensure directories exist:
@@ -36,9 +36,12 @@ Recommended settings are described in [Obsidian notes](operations/obsidian.md).
 The published handbook lives in `docs/` and builds with MkDocs (Material theme).
 
 ```bash
-uv sync   # if you have not synced yet
+uv sync --all-groups   # if you have not synced yet
+uv run python scripts/render_taxonomy_doc.py   # refresh generated reference (handbook)
 uv run mkdocs serve
 ```
+
+Or: `make docs-serve` from the repository root (see the `Makefile` next to `docs/`).
 
 Open the URL shown (typically `http://127.0.0.1:8000`).
 
@@ -53,12 +56,24 @@ See [Publishing](operations/publishing.md) for permissions, concurrency, and bra
 ## Validate the wiki locally
 
 ```bash
-uv sync
-uv run python scripts/validate_wiki.py --strict
+uv sync --all-groups
+make validate    # wiki + docs link checks; or: uv run python scripts/validate_wiki.py --strict && uv run python scripts/validate_docs_links.py
+uv run python scripts/render_taxonomy_doc.py --check
 uv run pytest
 ```
 
 CI runs the same checks on pull requests and `main` (see `.github/workflows/ci.yml`).
+
+## Optional: pre-commit
+
+After `uv sync --all-groups`, you can install [pre-commit](https://pre-commit.com/) hooks for Ruff and basic file hygiene:
+
+```bash
+uv run pre-commit install
+uv run pre-commit run --all-files
+```
+
+CI does not require hooks; it runs the same validators directly.
 
 ## Updating dependencies
 

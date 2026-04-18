@@ -4,14 +4,33 @@ version = "0.0.0"
 description = "LLM-maintained markdown wiki template (validation, MkDocs, tests)"
 readme = "README.md"
 requires-python = ">=3.10"
+# Runtime: validators, ingest, and shared helpers only. Docs site and dev tools live in groups.
 dependencies = [
+    "pymupdf==1.25.3",
+    "PyYAML==6.0.2",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit==4.2.0",
+    "pytest==8.3.5",
+    "ruff==0.11.6",
+]
+docs = [
     "mkdocs==1.6.1",
     "mkdocs-material==9.6.7",
     "pymdown-extensions==10.14.3",
-    "pymupdf==1.25.3",
-    "pytest==8.3.5",
-    "PyYAML==6.0.2",
 ]
 
 [tool.uv]
 package = false
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+src = ["scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "W"]
+[tool.ruff.lint.per-file-ignores]
+"scripts/*.py" = ["E402"]

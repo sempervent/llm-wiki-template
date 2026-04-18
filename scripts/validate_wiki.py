@@ -18,6 +18,7 @@ if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 
 from wiki_common import (
+    LOG_HEADING_PATTERN,
     extract_markdown_links,
     infer_repo_root,
     is_kebab_md,
@@ -25,7 +26,6 @@ from wiki_common import (
     normalize_link_target,
     requires_frontmatter_schema,
     resolve_markdown_path,
-    LOG_HEADING_PATTERN,
 )
 
 REQUIRED_ROOT_FILES = [
@@ -102,9 +102,7 @@ def main() -> int:
     must_index = [
         p
         for p in rel_wiki_paths
-        if p.parts[0] == "wiki"
-        and p.name not in ("index.md", "log.md")
-        and not p.name.startswith(".")
+        if p.parts[0] == "wiki" and p.name not in ("index.md", "log.md") and not p.name.startswith(".")
     ]
     for p in must_index:
         if p not in index_targets:

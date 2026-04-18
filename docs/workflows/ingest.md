@@ -9,7 +9,7 @@
    **PDFs:** For **PDF** sources, generate a new processed markdown file with text extraction (does not replace manual review for complex layouts):
 
    ```bash
-   uv sync   # ensures PyMuPDF (pymupdf) is installed
+   uv sync   # runtime deps include PyMuPDF; use `uv sync --all-groups` for docs/dev tools too
    uv run python scripts/ingest_pdf.py raw/inbox/your-file.pdf
    ```
 

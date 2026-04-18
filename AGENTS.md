@@ -56,6 +56,13 @@ The goal is **deterministic, inspectable, markdown-first** workflows: plain file
 2. If the answer should persist, **create or update** a durable wiki page (often `analyses/` or `concepts/`) and link it from `index.md` when appropriate.
 3. **Append** `wiki/log.md` with `query` entry summarizing the question and where the answer lives.
 
+### When answering a question, read index.md first, then traverse only relevant pages, then cite the pages used, and optionally file the answer back into the wiki if it creates durable value.
+
+1. Open **`wiki/index.md`** first; use it to choose clusters and only open pages needed for the question.
+2. Traverse **relevant** pages (and cited `raw/` when provenance matters), not the whole vault by default.
+3. **Cite** the wiki paths (and raw paths) your answer depended on.
+4. If the result has durable reuse value, **file it** into `wiki/` (often `analyses/` or `concepts/`), update `wiki/index.md` when appropriate, and append **`wiki/log.md`** with a `query` entry pointing at the new or updated page.
+
 ### Lint
 
 Periodic hygiene: link integrity, orphan reduction, stale-claim review, duplicate title checks, index alignment.
@@ -63,6 +70,15 @@ Periodic hygiene: link integrity, orphan reduction, stale-claim review, duplicat
 1. Run `uv run python scripts/validate_wiki.py` (use `--strict` in CI).
 2. Fix or ticket broken links; add missing index entries for intentional pages.
 3. **Append** `wiki/log.md` with `lint` entry.
+
+### Example lint policy
+
+Use the validator as the baseline; these are **optional** deeper passes for humans or scheduled jobs:
+
+- **Detect stale claims:** search for `review_status: stale`, old `updated` dates, or sections explicitly marked for review; prefer dated subsections, `supersedes` / `superseded_by`, or new analysis pages over silent edits.
+- **Flag contradictions:** when two pages assert incompatible facts, surface the tension (dated evidence, confidence) or split into a new analysis with links—do not silently overwrite.
+- **Flag missing backlinks:** beyond orphan detection (no index + no inbound links), watch for **high-value pages** that peers *should* link but do not; add cross-links or an explicit index entry.
+- **Flag frequent mentions of missing pages:** run `scripts/wiki_wikilinks.py` for unresolved `[[wikilinks]]` ranked by frequency; prioritize scaffolding missing concept/entity pages or adding `aliases` to existing ones.
 
 ---
 
@@ -269,9 +285,15 @@ Optional YAML frontmatter is encouraged. Common fields:
 |--------|------|
 | `scripts/bootstrap.py` | Create missing dirs/files; optional rename placeholders |
 | `scripts/validate_wiki.py` | Repository integrity checks |
+| `scripts/validate_docs_links.py` | Internal link checks for `docs/` (handbook) |
 | `scripts/rebuild_index.py` | Audit or regenerate index sections |
 | `scripts/append_log.py` | Append a correctly formatted log entry |
 | `scripts/scaffold_page.py` | New page from `templates/` |
+| `scripts/ingest_pdf.py` | PDF text → markdown under `raw/processed/` |
+| `scripts/render_taxonomy_doc.py` | Regenerate `docs/reference/page-taxonomy.md` from `AGENTS.md` + `templates/` |
+| `scripts/wiki_search.py` | Optional regex search across `wiki/` markdown |
+| `scripts/wiki_wikilinks.py` | Report unresolved `[[wikilinks]]` (missing targets) |
+| `scripts/intake_inbox.py` | Optional report on files in `raw/inbox/` |
 
 ---
 

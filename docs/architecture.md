@@ -39,4 +39,4 @@ flowchart TB
 
 ## Tooling
 
-Python scripts under `scripts/` enforce deterministic checks. CI runs `uv sync --frozen`, then `validate_wiki.py --strict`, `pytest`, and `mkdocs build --strict` via `uv run`.
+Python scripts under `scripts/` enforce deterministic checks. CI runs `uv sync --frozen --all-groups`, then `validate_wiki.py --strict`, `validate_docs_links.py`, `render_taxonomy_doc.py --check`, `pytest`, and `mkdocs build --strict` via `uv run`.

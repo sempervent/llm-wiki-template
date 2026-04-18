@@ -5,10 +5,10 @@
 Use standard markdown links with **relative paths** from the current file:
 
 ```markdown
-[Concept](../concepts/llm-wiki-pattern.md)
+[Concept](../../wiki/concepts/llm-wiki-pattern.md)
 ```
 
-This works in GitHub, Obsidian, and MkDocs when pages are included.
+From `docs/…`, cross-link to the vault under `wiki/…` using a repo-relative path as above (GitHub and Obsidian). The MkDocs handbook under `docs/` does not ship `wiki/` pages, so those links are for repository navigation, not the published handbook build.
 
 ## Wikilinks
 
