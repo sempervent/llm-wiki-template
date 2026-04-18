@@ -1,10 +1,10 @@
-# Convenience targets (requires GNU Make). Same recipes exist in ./justfile for `just`.
-# Install everything with: make sync
+# Intent-first commands for daily operation (requires GNU Make).
+# Same recipes exist in ./justfile (`just ...`), but docs use `make ...` as primary examples.
 
 UV ?= uv
 PY := $(UV) run python
 
-.PHONY: sync bootstrap validate validate-docs taxonomy-render taxonomy-check test docs-build docs-serve
+.PHONY: sync bootstrap validate validate-docs taxonomy-render taxonomy-check test docs-build docs-serve check
 
 sync:
 	$(UV) sync --all-groups
@@ -33,3 +33,10 @@ docs-build: sync taxonomy-render
 
 docs-serve: sync taxonomy-render
 	$(UV) run mkdocs serve
+
+check: sync
+	$(PY) scripts/validate_wiki.py --strict
+	$(PY) scripts/validate_docs_links.py
+	$(UV) run pytest
+	$(PY) scripts/render_taxonomy_doc.py --check
+	$(UV) run mkdocs build --strict

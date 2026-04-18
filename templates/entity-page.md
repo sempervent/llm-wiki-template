@@ -12,10 +12,22 @@ review_status: unreviewed
 
 # {{TITLE}}
 
-**Summary**
+## What this entity is
 
--
+One paragraph scope statement.
 
-**Related**
+## Why this entity has a page
 
--
+- Reappears across pages:
+- Common confusion to avoid:
+
+## Related pages
+
+- Concepts:
+- Topics:
+- Analyses/comparisons:
+- Source-notes:
+
+## Open questions
+
+- 

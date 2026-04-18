@@ -10,15 +10,29 @@ review_status: unreviewed
 
 # {{TITLE}}
 
-**Scope**
+## Scope
 
--
+What this wiki covers and does not cover.
 
-**How to read this wiki**
+## Start here
 
-1. [`index.md`](index.md)
-2. [`log.md`](log.md)
+1. [`index.md`](index.md) for navigation
+2. [`log.md`](log.md) for recent changes
+3. highest-value concept/topic pages:
+   - 
+   - 
 
-**Principles**
+## Operating principles
 
--
+- Raw is immutable provenance.
+- Wiki is maintained synthesis.
+- Ingest is capture plus activation.
+- Canonicalization before proliferation.
+
+## Active hubs and canonical pages
+
+- 
+
+## Review triggers
+
+- When to revisit this overview:

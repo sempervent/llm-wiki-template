@@ -10,10 +10,11 @@ review_status: unreviewed
 
 # {{TITLE}}
 
-| Date | Event | Notes |
-|------|-------|-------|
-| | | |
+| Date | Event | Source | Why it matters |
+|------|-------|--------|----------------|
+| YYYY-MM-DD |       |        |                |
+| YYYY-MM-DD |       |        |                |
 
-**Related**
+## Related pages
 
--
+- 

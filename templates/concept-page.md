@@ -1,6 +1,6 @@
 ---
 title: "{{TITLE}}"
-page_type: "{{PAGE_TYPE}}"
+page_type: concept
 status: draft
 created: "{{DATE}}"
 updated: "{{DATE}}"
@@ -11,14 +11,22 @@ review_status: unreviewed
 
 # {{TITLE}}
 
-**Definition**
+## Definition
 
--
+One concise paragraph.
 
-**Implications**
+## Why it matters in this wiki
 
--
+- What decisions or interpretations depend on this concept?
+- What should this concept route readers to?
 
-**See also**
+## Evidence anchors
 
--
+- Source-notes/raw backing this concept:
+  - 
+
+## Related pages
+
+- Concepts:
+- Entities:
+- Analyses/comparisons:

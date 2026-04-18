@@ -13,18 +13,32 @@ review_status: unreviewed
 
 # {{TITLE}}
 
-**Question**
+## Question
 
--
+What is being answered or evaluated?
 
-**Answer**
+## Short answer
 
--
+2-6 sentences.
 
-**Evidence**
+## Reasoning
 
--
+- Key reasoning steps:
+  - 
+  - 
 
-**Limits**
+## Evidence and citations
 
--
+- Source-note/raw pointers:
+  - 
+
+## Routing and impact
+
+- Canonical pages this should update:
+- New/updated comparisons, checklists, or hubs:
+- Index updates needed:
+
+## Limits and follow-up
+
+- Known uncertainty:
+- Next check/review trigger:

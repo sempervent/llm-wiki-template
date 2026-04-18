@@ -10,14 +10,15 @@ review_status: unreviewed
 
 # {{TITLE}}
 
-**Definition**
+## Definition
 
--
+One sentence.
 
-**Contrast**
+## Boundary / contrast
 
--
+What this term is not, or what it is often confused with.
 
-**See also**
+## Usage in this wiki
 
--
+- Canonical pages using this term:
+- Source-notes grounding this term:

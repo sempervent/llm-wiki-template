@@ -35,3 +35,10 @@ docs-build: sync taxonomy-render
 
 docs-serve: sync taxonomy-render
     {{uv}} run mkdocs serve
+
+check: sync
+    {{uv}} run python scripts/validate_wiki.py --strict
+    {{uv}} run python scripts/validate_docs_links.py
+    {{uv}} run pytest
+    {{uv}} run python scripts/render_taxonomy_doc.py --check
+    {{uv}} run mkdocs build --strict
