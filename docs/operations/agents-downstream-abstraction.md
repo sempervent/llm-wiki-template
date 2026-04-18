@@ -16,8 +16,9 @@
 
 ## Intentionally omitted (typically fork- or domain-specific)
 
-- **Business-plan or “site package”** layouts, **site-intelligence** pages, and **named geography** patterns.
-- **Package strategy** or **procedural packaging** docs tied to one product domain.
+- **Extra navigation spines** beyond the default taxonomy—e.g. initiative-sized bundles, stakeholder-specific hubs, or other IA layers a mature fork may need.
+- **Context-specific** overview pages (per deployment, region, tenant, facility, or similar) when the subject matter requires them.
+- **Procedure or policy bundles** and where they live, when rules are tied to one industry, regulator, or product line.
 - **Full optional frontmatter** extensions (e.g. rich `page_subtype` / maturity fields)—forks may add them; this template’s validator focuses on `title` and `page_type` where required.
 - **Alternate script names or extra validators** — the **canonical** script list is whatever appears in root **`AGENTS.md`** for this repo.
 - **Different MkDocs roots** (e.g. building from `wiki/` instead of `docs/`) — forks may reconfigure; the template documents **`docs/`** as the handbook.

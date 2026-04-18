@@ -61,4 +61,10 @@ Append-only chronological record. New entries go at the **bottom**. Heading form
 
 - Deleted `AGENTS-smartfarmwiki.md` (private/downstream reference); template stays self-contained.
 - Rewrote `docs/operations/agents-downstream-abstraction.md` as maintainer guidance only—no local fork artifact required; updated `agent-maintenance.md` link text.
+---
+
+## [2026-04-18] policy | Template neutrality: fork abstraction wording
+
+- Tightened `docs/operations/agents-downstream-abstraction.md` “omitted” list to remove sector-specific jargon; kept the same intent in generic language.
+- `AGENTS.md` entity-first rule: “sites” → “locations” for neutral reading.
 

@@ -184,7 +184,7 @@ If a strong source-note is not yet linked from a relevant hub or canonical page,
 
 ## Entity-first (named real-world subjects)
 
-**Named** products, organizations, people, sites, or major systems that recur across pages should eventually earn an **`entities/`** page: one canonical title, short scope, links outward to concepts and source-notes. **Concepts** remain for ideas; **entities** are for specific things when the vault needs stable cross-links. Until an entity exists, link via topics and source-notes; add the entity when duplication becomes painful.
+**Named** products, organizations, people, locations, or major systems that recur across pages should eventually earn an **`entities/`** page: one canonical title, short scope, links outward to concepts and source-notes. **Concepts** remain for ideas; **entities** are for specific things when the vault needs stable cross-links. Until an entity exists, link via topics and source-notes; add the entity when duplication becomes painful.
 
 ---
 
