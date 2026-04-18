@@ -1,0 +1,43 @@
+# Wiki index
+
+First-stop navigation for humans and agents. Every **intentional** wiki page should appear here unless it is intentionally transient (rare); orphans are reported by `scripts/validate_wiki.py`.
+
+## Overview
+
+- [Wiki overview](overview.md) — North-star summary of this vault’s purpose and rules.
+
+## Entities
+
+- [Example Organization](entities/example-org.md) — Fictional org used to demonstrate entity pages.
+
+## Concepts
+
+- [LLM Wiki pattern](concepts/llm-wiki-pattern.md) — Core ideas: raw vs wiki, synthesis, maintenance.
+
+## Topics
+
+- [Knowledge synthesis](topics/knowledge-synthesis.md) — Cross-cutting theme for how conclusions are built here.
+
+## Source notes
+
+- [Example LLM Wiki note (raw)](source-notes/example-llm-wiki-note.md) — Grounding note for `raw/processed/2026/example-llm-wiki-note.md`.
+
+## Analyses
+
+- [Why a synthesis layer](analyses/why-synthesis-layer.md) — Short analysis tying concepts to practice.
+
+## Comparisons
+
+- [Raw vs wiki](comparisons/raw-vs-wiki.md) — Side-by-side responsibilities and failure modes.
+
+## Timelines
+
+- [Example domain timeline](timelines/example-domain-timeline.md) — Illustrative chronology for template demos.
+
+## Glossary
+
+- [Synthesis layer](glossary/synthesis-layer.md) — Definition entry used across pages.
+
+## Meta
+
+- [Append-only log](log.md) — Chronological record of ingests, queries, and lint passes.

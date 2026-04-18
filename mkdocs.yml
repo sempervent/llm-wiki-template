@@ -1,0 +1,78 @@
+# MkDocs site: template handbook and operator documentation.
+# Wiki content lives in /wiki (Obsidian); this site documents how to run and maintain it.
+
+site_name: LLM Wiki Template
+site_description: Structured, agent-maintained markdown wiki — handbook and operations
+site_author: Template maintainers
+
+# Replace after "Use this template" with your repo URL (bootstrap.py can set this).
+repo_url: https://github.com/sempervent/llm-wiki-template
+repo_name: sempervent/llm-wiki-template
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Architecture: architecture.md
+  - Workflows:
+      - workflows/ingest.md
+      - workflows/query.md
+      - workflows/lint.md
+  - Conventions:
+      - conventions/page-schema.md
+      - conventions/linking.md
+      - conventions/frontmatter.md
+      - conventions/citations.md
+  - Operations:
+      - operations/validation.md
+      - operations/publishing.md
+      - operations/agent-maintenance.md
+      - operations/obsidian.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sempervent/llm-wiki-template
+
+copyright: Copyright &copy; 2026 — LLM Wiki Template
