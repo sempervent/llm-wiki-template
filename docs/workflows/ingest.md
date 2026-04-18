@@ -4,7 +4,7 @@
 
 ## Steps
 
-1. **Drop or file raw content** under `raw/inbox/`; after triage, move to `raw/processed/...` with stable paths. Do not later rewrite processed text to “fix” meaning—add a new raw note if the source changes.
+1. **Drop or file raw content** under `raw/inbox/`; after triage, move to `raw/processed/...` with stable paths. Do not later rewrite processed text to “fix” meaning—add a new raw note if the source changes. **`AGENTS.md`** treats ingest as **capture + activation**: after grounding a source-note, decide whether to route findings into canonical pages, hubs, comparisons, or other structured artifacts—not only the source-note.
 
    **PDFs:** For **PDF** sources, generate a new processed markdown file with text extraction (does not replace manual review for complex layouts):
 

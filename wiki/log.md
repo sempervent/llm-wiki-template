@@ -49,4 +49,10 @@ Append-only chronological record. New entries go at the **bottom**. Heading form
 ## [2026-04-18] policy | Add justfile mirroring Makefile
 
 - Added `justfile` with recipes matching `Makefile` (`just validate`, `just docs-serve`, etc.); documented in `README.md` and handbook index/quickstart.
+---
+
+## [2026-04-18] policy | AGENTS: ingest activation + routing (downstream abstraction)
+
+- Revised `AGENTS.md` with capture+activation ingest, evidence-summary guidance, artifact table, structural vs integration quality, canonicalization, hubs, derivative artifacts, evidence routing, and generic claim/entity/sensitive-raw rules.
+- Added `docs/operations/agents-downstream-abstraction.md`; linked from agent-maintenance and ingest workflow; regenerated `docs/reference/page-taxonomy.md`.
 

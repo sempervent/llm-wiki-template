@@ -11,9 +11,12 @@ Automation (Codex, Claude Code, Cursor agents, etc.) should treat [`AGENTS.md`](
 ## Session pattern
 
 1. Read `AGENTS.md` and `wiki/index.md`.
-2. Perform ingest/query/lint in small, verifiable steps.
+2. Perform ingest/query/lint in small, verifiable steps. Ingest is **capture + activation** (see `AGENTS.md`): file evidence, then route it into the wiki model when material warrants it.
 3. Run `scripts/validate_wiki.py` before commit.
 4. Append `wiki/log.md` for substantive work.
+
+See [Downstream fork abstraction](agents-downstream-abstraction.md) for how the template relates to evolved wikis (optional reading).
+
 
 ## Pull requests
 

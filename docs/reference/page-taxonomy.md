@@ -17,12 +17,14 @@ Standard directories under `wiki/`:
 | `source_note` | `source-notes/` | Grounding note for a raw source |
 | `entity` | `entities/` | Named subject (person, org, product, paper) |
 | `concept` | `concepts/` | Idea or term of art |
-| `topic` | `topics/` | Thematic bucket spanning entities/concepts |
-| `analysis` | `analyses/` | Argument, evaluation, synthesis |
+| `topic` | `topics/` | Thematic bucket spanning entities/concepts; often a **hub** for routing |
+| `analysis` | `analyses/` | Argument, evaluation, synthesis; may include procedure-shaped pages in this repo |
 | `comparison` | `comparisons/` | Structured A vs B |
 | `timeline` | `timelines/` | Chronology |
 | `glossary` | `glossary/` | Definition-first entries |
 | `operating_doc` | (rare; or root) | How the repo itself is operated |
+
+Forks may add optional YAML (e.g. `page_subtype`) for guide-like analyses; the template validator focuses on `title` and `page_type` where required.
 
 ---
 

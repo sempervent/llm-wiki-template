@@ -70,6 +70,7 @@ nav:
       - operations/validation.md
       - operations/publishing.md
       - operations/agent-maintenance.md
+      - operations/agents-downstream-abstraction.md
       - operations/obsidian.md
   - Reference:
       - reference/page-taxonomy.md
