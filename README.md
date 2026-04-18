@@ -59,7 +59,7 @@ uv run python scripts/scaffold_page.py --type concept --title "My concept"
 uv run python scripts/ingest_pdf.py raw/inbox/your-file.pdf   # PDF → raw/processed/…/… .md
 ```
 
-**Makefile shortcuts:** `make docs-serve`, `make docs-build`, `make test`, `make bootstrap`, `make validate`. Optional: `uv run pre-commit install` after sync (see `docs/quickstart.md`).
+**Shortcuts:** **`Makefile`** — `make docs-serve`, `make docs-build`, `make test`, `make bootstrap`, `make validate`. **`just`** — same recipes in `justfile` (e.g. `just validate`, `just docs-serve`). Optional: `uv run pre-commit install` after sync (see `docs/quickstart.md`).
 
 ## Documentation site
 

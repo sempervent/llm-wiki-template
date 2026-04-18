@@ -44,4 +44,9 @@ Append-only chronological record. New entries go at the **bottom**. Heading form
 - Added `scripts/validate_docs_links.py`, `mkdocs.yml` `strict: true`, generated `docs/reference/page-taxonomy.md` via `scripts/render_taxonomy_doc.py`.
 - Optional scripts: `wiki_search.py`, `wiki_wikilinks.py`, `intake_inbox.py`; `.pre-commit-config.yaml` + dev dependency `pre-commit`.
 - Extended `AGENTS.md` (query workflow example, example lint policy) and handbook pages (`docs/operations/validation.md`, Dataview notes in frontmatter conventions).
+---
+
+## [2026-04-18] policy | Add justfile mirroring Makefile
+
+- Added `justfile` with recipes matching `Makefile` (`just validate`, `just docs-serve`, etc.); documented in `README.md` and handbook index/quickstart.
 

@@ -10,7 +10,7 @@ This site is the **operator handbook** for the template: architecture, workflows
 
 **Environment**
 
-Dependencies are declared in `pyproject.toml` and locked in `uv.lock`. **Runtime** tools (validators, PDF ingest) ship in the main dependency list; **docs** (MkDocs Material) and **dev** (pytest, ruff, pre-commit) live in [dependency groups](https://docs.astral.sh/uv/concepts/projects/dependencies/#dependency-groups). For a full local setup run **`uv sync --all-groups`** once per clone (or after lock changes), then invoke scripts with **`uv run`** (see [Quickstart](quickstart.md)). The repository root **`Makefile`** provides shortcuts such as `make validate`, `make test`, and `make docs-serve`.
+Dependencies are declared in `pyproject.toml` and locked in `uv.lock`. **Runtime** tools (validators, PDF ingest) ship in the main dependency list; **docs** (MkDocs Material) and **dev** (pytest, ruff, pre-commit) live in [dependency groups](https://docs.astral.sh/uv/concepts/projects/dependencies/#dependency-groups). For a full local setup run **`uv sync --all-groups`** once per clone (or after lock changes), then invoke scripts with **`uv run`** (see [Quickstart](quickstart.md)). The repository root **`Makefile`** and **`justfile`** ([just](https://github.com/casey/just)) provide the same shortcuts—for example `make validate` or `just validate`, `make docs-serve` or `just docs-serve`.
 
 **Scripts**
 

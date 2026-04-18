@@ -1,4 +1,5 @@
-# Convenience targets (requires GNU Make). Install everything with: make sync
+# Convenience targets (requires GNU Make). Same recipes exist in ./justfile for `just`.
+# Install everything with: make sync
 
 UV ?= uv
 PY := $(UV) run python

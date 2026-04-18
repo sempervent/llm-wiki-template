@@ -41,7 +41,7 @@ uv run python scripts/render_taxonomy_doc.py   # refresh generated reference (ha
 uv run mkdocs serve
 ```
 
-Or: `make docs-serve` from the repository root (see the `Makefile` next to `docs/`).
+Or: `make docs-serve` or `just docs-serve` from the repository root (`Makefile` / `justfile` next to `docs/`).
 
 Open the URL shown (typically `http://127.0.0.1:8000`).
 
