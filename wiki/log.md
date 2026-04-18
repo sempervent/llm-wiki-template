@@ -55,4 +55,10 @@ Append-only chronological record. New entries go at the **bottom**. Heading form
 
 - Revised `AGENTS.md` with capture+activation ingest, evidence-summary guidance, artifact table, structural vs integration quality, canonicalization, hubs, derivative artifacts, evidence routing, and generic claim/entity/sensitive-raw rules.
 - Added `docs/operations/agents-downstream-abstraction.md`; linked from agent-maintenance and ingest workflow; regenerated `docs/reference/page-taxonomy.md`.
+---
+
+## [2026-04-18] refactor | Remove downstream AGENTS snapshot from template
+
+- Deleted `AGENTS-smartfarmwiki.md` (private/downstream reference); template stays self-contained.
+- Rewrote `docs/operations/agents-downstream-abstraction.md` as maintainer guidance only—no local fork artifact required; updated `agent-maintenance.md` link text.
 

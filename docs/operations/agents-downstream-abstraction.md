@@ -1,6 +1,6 @@
-# AGENTS.md and downstream forks
+# Evolving `AGENTS.md` from downstream forks
 
-The repository may include **`AGENTS-smartfarmwiki.md`** in the repo root (see [snapshot on GitHub](https://github.com/sempervent/llm-wiki-template/blob/main/AGENTS-smartfarmwiki.md) when published): a **downstream** fork diff for generic contract improvements. It is **not** the active contract; **[`AGENTS.md`](https://github.com/sempervent/llm-wiki-template/blob/main/AGENTS.md)** always wins locally.
+**Template maintainers** sometimes fold **generic** behaviors learned in **downstream** wikis (longer-running repos that started from this template or share the same pattern). Those forks are **not** shipped here—no private operating contract is checked in. This page records **what** was abstracted into the template and **what** usually stays fork-specific, so you can port ideas without depending on external files in this repository.
 
 ## Abstracted into the template (generic)
 
@@ -12,16 +12,15 @@ The repository may include **`AGENTS-smartfarmwiki.md`** in the repo root (see [
 - **Evidence routing** — after material ingests, update index, overview, hubs, or canonical pages so readers can find the work.
 - **Canonicalization** — search for a home before adding overlapping pages; link upward from supporting notes.
 - **Hubs and ownership language** — canonical pages own subject clusters; topic hubs and `index.md` are routing contracts.
-- **Sensitive raw / claim strength / entity-first** — shortened, domain-neutral versions of downstream policy.
+- **Sensitive raw / claim strength / entity-first** — shortened, domain-neutral patterns for local corpora, epistemics, and recurring named subjects.
 
-## Intentionally omitted (domain- or fork-specific)
+## Intentionally omitted (typically fork- or domain-specific)
 
-- **Business-plan packages**, **site-intelligence**, and **named geography** patterns.
-- **Package strategy** wiki pages and **procedural guide** packaging specific to one product domain.
-- **`page_subtype` / `operational_maturity`** full specification — mentioned only as an optional fork extension; the template validator does not require them.
-- **Fork-only scripts** (e.g. `pdf_to_markdown` vs `ingest_pdf`, `validate_raw_pdf_links`) — template keeps its own script set in `AGENTS.md`.
-- **MkDocs publishing from `wiki/` only** — the template publishes **`docs/`** via MkDocs; forks may reconfigure.
-- **Mission-and-values** wiki page pointers and **farm / agritourism** examples.
-- **Detailed regulatory** lists — replaced with a short **high-stakes claims** rule (safety, compliance, health, legal).
+- **Business-plan or “site package”** layouts, **site-intelligence** pages, and **named geography** patterns.
+- **Package strategy** or **procedural packaging** docs tied to one product domain.
+- **Full optional frontmatter** extensions (e.g. rich `page_subtype` / maturity fields)—forks may add them; this template’s validator focuses on `title` and `page_type` where required.
+- **Alternate script names or extra validators** — the **canonical** script list is whatever appears in root **`AGENTS.md`** for this repo.
+- **Different MkDocs roots** (e.g. building from `wiki/` instead of `docs/`) — forks may reconfigure; the template documents **`docs/`** as the handbook.
+- **Long mission prose or sector examples** in `AGENTS.md` — keep mission and voice in **`wiki/overview.md`** and concepts, not in the contract file.
 
-When porting a fork forward, merge **behavior** here and keep **domain prose** in `wiki/overview.md` and concepts—not in `AGENTS.md`.
+When porting a fork forward, merge **behavior** into your repo’s **`AGENTS.md`** and keep **domain prose** in the wiki.

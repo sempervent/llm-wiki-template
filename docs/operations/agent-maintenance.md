@@ -15,7 +15,7 @@ Automation (Codex, Claude Code, Cursor agents, etc.) should treat [`AGENTS.md`](
 3. Run `scripts/validate_wiki.py` before commit.
 4. Append `wiki/log.md` for substantive work.
 
-See [Downstream fork abstraction](agents-downstream-abstraction.md) for how the template relates to evolved wikis (optional reading).
+See [Evolving `AGENTS.md` from forks](agents-downstream-abstraction.md) for maintainer-oriented notes (optional).
 
 
 ## Pull requests
