@@ -56,6 +56,7 @@ uv run python scripts/validate_wiki.py --strict # integrity checks (CI parity)
 uv run python scripts/rebuild_index.py          # audit wiki/index.md vs files on disk
 uv run python scripts/append_log.py --kind ingest --title "..."  # append wiki/log.md
 uv run python scripts/scaffold_page.py --type concept --title "My concept"
+uv run python scripts/ingest_pdf.py raw/inbox/your-file.pdf   # PDF → raw/processed/…/… .md
 ```
 
 ## Documentation site

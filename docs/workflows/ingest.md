@@ -5,6 +5,16 @@
 ## Steps
 
 1. **Drop or file raw content** under `raw/inbox/`; after triage, move to `raw/processed/...` with stable paths. Do not later rewrite processed text to “fix” meaning—add a new raw note if the source changes.
+
+   **PDFs:** For **PDF** sources, generate a new processed markdown file with text extraction (does not replace manual review for complex layouts):
+
+   ```bash
+   uv sync   # ensures PyMuPDF (pymupdf) is installed
+   uv run python scripts/ingest_pdf.py raw/inbox/your-file.pdf
+   ```
+
+   Optional flags: `--slug my-file`, `--title "Human title"`, `--year 2026`, `--ingested YYYY-MM-DD`, `--dry-run`. The script writes under `raw/processed/<year>/<slug>.md` and refuses to overwrite unless you pass `--force`. Keep the original PDF under `raw/inbox/` or `raw/assets/` as you prefer; cite both in the source-note if both exist.
+
 2. **Create or update a source-note** in `wiki/source-notes/` with frontmatter `page_type: source_note` and `source_ids` pointing at the raw path.
 3. **Update entities, concepts, topics, analyses** as needed; add relative cross-links.
 4. **Update `wiki/index.md`** so every intentional page is listed.

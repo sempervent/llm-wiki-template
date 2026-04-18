@@ -13,6 +13,7 @@ First-stop navigation for humans and agents. Every **intentional** wiki page sho
 ## Concepts
 
 - [LLM Wiki pattern](concepts/llm-wiki-pattern.md) — Core ideas: raw vs wiki, synthesis, maintenance.
+- [PDF to markdown ingest](concepts/pdf-to-markdown-ingest.md) — Ingesting PDF text into `raw/processed/` with `scripts/ingest_pdf.py`.
 
 ## Topics
 
@@ -21,6 +22,7 @@ First-stop navigation for humans and agents. Every **intentional** wiki page sho
 ## Source notes
 
 - [Example LLM Wiki note (raw)](source-notes/example-llm-wiki-note.md) — Grounding note for `raw/processed/2026/example-llm-wiki-note.md`.
+- [PDF ingest demo](source-notes/pdf-ingest-demo.md) — Demo PDF and extracted markdown (`pdf-ingest-demo`).
 
 ## Analyses
 

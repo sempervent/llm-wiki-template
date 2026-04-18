@@ -28,3 +28,11 @@ Append-only chronological record. New entries go at the **bottom**. Heading form
 ## [2026-04-17] lint | Template validation pass
 
 - Ran `validate_wiki.py` with `--strict`; fixed index and link set for demo pages.
+---
+
+## [2026-04-17] ingest | PDF to markdown ingest
+
+- Added `scripts/ingest_pdf.py` (PyMuPDF) and `pymupdf` dependency; documented in `docs/workflows/ingest.md` and `README.md`.
+- Demo: `raw/inbox/pdf-ingest-demo.pdf` → `raw/processed/2026/pdf-ingest-demo.md`.
+- New wiki pages: `concepts/pdf-to-markdown-ingest.md`, `source-notes/pdf-ingest-demo.md`; updated `index.md` and `concepts/llm-wiki-pattern.md`.
+

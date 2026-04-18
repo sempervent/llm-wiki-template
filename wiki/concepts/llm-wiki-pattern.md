@@ -25,3 +25,4 @@ The **LLM Wiki** pattern separates **immutable raw sources** from a **maintained
 **Source grounding**
 
 - See source-note [`example-llm-wiki-note`](../source-notes/example-llm-wiki-note.md) for the demo raw excerpt.
+- For PDFs, see [`PDF to markdown ingest`](pdf-to-markdown-ingest.md) and the [`pdf-ingest-demo`](../source-notes/pdf-ingest-demo.md) source-note.
