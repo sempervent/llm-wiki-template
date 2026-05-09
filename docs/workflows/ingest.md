@@ -10,11 +10,34 @@ Add evidence to `raw/`, ground it in **`wiki/source-notes/`**, then **activate**
 4. **Route** — `wiki/index.md` + hubs when navigation changes.
 5. **Log + validate** — append `wiki/log.md` (`ingest`); `make validate`.
 
-## PDFs
+## PDF (text only)
+
+Fast path when you only need page text (no figure extraction):
 
 ```bash
 uv run python scripts/ingest_pdf.py raw/inbox/your-file.pdf
 ```
+
+## PDF, Word, PowerPoint → Markdown + images (Obsidian)
+
+Use **Pandoc** when you want Markdown **and** embedded images on disk next to the note (Obsidian shows them via relative paths).
+
+**Install** `pandoc` on your machine (not a Python package). PDF conversion usually also needs **Poppler** (e.g. `brew install pandoc poppler` on macOS; `apt install pandoc poppler-utils` on Debian/Ubuntu).
+
+```bash
+uv run python scripts/ingest_pandoc.py raw/inbox/report.docx
+uv run python scripts/ingest_pandoc.py raw/inbox/slides.pptx
+uv run python scripts/ingest_pandoc.py raw/inbox/scan.pdf
+```
+
+Output:
+
+- `raw/processed/<year>/<slug>.md` — YAML frontmatter + title + body
+- `raw/processed/<year>/<slug>_media/` — images (`…/media/…` by Pandoc convention)
+
+Open the `.md` in Obsidian from a vault rooted at the repo (or `wiki/` — prefer repo root so `raw/` paths resolve like the rest of the corpus).
+
+If Pandoc fails on PDF, use `ingest_pdf.py` for text-only extraction, or fix Poppler/Pandoc and retry.
 
 ## Done
 

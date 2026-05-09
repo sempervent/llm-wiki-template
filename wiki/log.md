@@ -89,3 +89,12 @@ Append-only chronological record. New entries go at the **bottom**. Heading form
 
 - Trimmed README and handbook onboarding pages; added explicit **Next:** file pointers; standardized on `make` with one `just` note.
 - Shortened workflows (`ingest`, `query`, `lint`); repaired corrupted body text in the prior refactor log entry above.
+
+---
+
+## [2026-05-09] refactor | Pandoc ingest for DOCX, PPTX, PDF + images
+
+- Added `scripts/ingest_pandoc.py` (Pandoc → `raw/processed/<year>/<slug>.md` plus `<slug>_media/` for Obsidian-relative figures).
+- Moved `slugify_stem` / `yaml_escape_double_quoted` into `wiki_common.py`; `ingest_pdf.py` imports them.
+- Documented install + usage in `docs/workflows/ingest.md`, README, Obsidian ops, `AGENTS.md` scripts table, and ingest checklist.
+- Tests: `tests/test_ingest_pandoc.py` (mocked pandoc).

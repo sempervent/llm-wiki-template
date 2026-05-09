@@ -33,6 +33,18 @@ def infer_repo_root(explicit: Path | None) -> Path:
     return repo_root_from_scripts()
 
 
+def slugify_stem(name: str) -> str:
+    stem = Path(name).stem
+    s = stem.lower().replace(" ", "-")
+    s = re.sub(r"[^a-z0-9-]+", "-", s)
+    s = re.sub(r"-+", "-", s).strip("-")
+    return s or "document"
+
+
+def yaml_escape_double_quoted(value: str) -> str:
+    return value.replace("\\", "\\\\").replace('"', '\\"')
+
+
 FM_HEADER = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
 
 

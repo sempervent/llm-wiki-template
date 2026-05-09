@@ -18,25 +18,13 @@ _SCRIPT_DIR = Path(__file__).resolve().parent
 if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 
-from wiki_common import infer_repo_root
+from wiki_common import infer_repo_root, slugify_stem, yaml_escape_double_quoted
 
 try:
     import fitz  # PyMuPDF
 except ImportError as e:  # pragma: no cover - exercised when dependency missing
     print("ERROR: PyMuPDF is required. Install with: uv sync (or uv sync --all-groups)", file=sys.stderr)
     raise SystemExit(1) from e
-
-
-def slugify_stem(name: str) -> str:
-    stem = Path(name).stem
-    s = stem.lower().replace(" ", "-")
-    s = re.sub(r"[^a-z0-9-]+", "-", s)
-    s = re.sub(r"-+", "-", s).strip("-")
-    return s or "document"
-
-
-def yaml_escape_double_quoted(value: str) -> str:
-    return value.replace("\\", "\\\\").replace('"', '\\"')
 
 
 def pages_to_markdown_body(pdf_path: Path) -> str:

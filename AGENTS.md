@@ -397,7 +397,8 @@ Optional YAML frontmatter is encouraged. Common fields:
 | `scripts/rebuild_index.py` | Audit or regenerate index sections |
 | `scripts/append_log.py` | Append a correctly formatted log entry |
 | `scripts/scaffold_page.py` | New page from `templates/` |
-| `scripts/ingest_pdf.py` | PDF text → markdown under `raw/processed/` |
+| `scripts/ingest_pdf.py` | PDF text → markdown under `raw/processed/` (PyMuPDF; no images) |
+| `scripts/ingest_pandoc.py` | PDF / DOCX / PPTX → markdown + extracted images under `raw/processed/` (requires `pandoc`) |
 | `scripts/render_taxonomy_doc.py` | Regenerate `docs/reference/page-taxonomy.md` from `AGENTS.md` + `templates/` |
 | `scripts/wiki_search.py` | Optional regex search across `wiki/` markdown |
 | `scripts/wiki_wikilinks.py` | Report unresolved `[[wikilinks]]` (missing targets) |

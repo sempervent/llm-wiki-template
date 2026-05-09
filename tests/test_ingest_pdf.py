@@ -42,7 +42,7 @@ def test_build_processed_markdown_includes_frontmatter() -> None:
 
 
 def test_slugify_stem() -> None:
-    from ingest_pdf import slugify_stem
+    from wiki_common import slugify_stem
 
     assert slugify_stem("My File.PDF") == "my-file"
     assert slugify_stem("___") == "document"

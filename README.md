@@ -36,6 +36,8 @@ uv sync --all-groups
 | `docs/` | Handbook (optional public mirror via Pages) |
 | `scripts/`, `templates/`, `examples/` | Tooling, scaffolds, specimens |
 
+**Office / PDF → Markdown (optional):** install [Pandoc](https://pandoc.org/) locally, then `uv run python scripts/ingest_pandoc.py raw/inbox/file.docx` — writes `raw/processed/...` plus a `<slug>_media/` folder for Obsidian-friendly images. See [`docs/workflows/ingest.md`](docs/workflows/ingest.md).
+
 ## Commands
 
 `just` mirrors `make` (same names).

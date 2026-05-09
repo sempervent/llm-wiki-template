@@ -26,6 +26,8 @@ Obsidian is the default way to read and edit **`wiki/`** + **`raw/`**.
 
 Prefer `raw/assets/` (or a documented path). Avoid spaces in filenames.
 
+Ingested Office/PDF notes may place images under `raw/processed/<year>/<slug>_media/`; see the [ingest workflow](../workflows/ingest.md) (Pandoc). Keep the vault at **repo root** so those paths preview next to the Markdown file.
+
 ## Graph
 
 Use as a **hint**, not truth. Prefer `wiki/index.md` + hubs for navigation.
